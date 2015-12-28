@@ -35,8 +35,9 @@
 	      	  	<wsdlUrls>
 	      	  		<wsdlUrl>http://localhost:8080/ws1?wsdl</wsdlUrl>
 	      	  	</wsdlUrls>
+	      	  	<bindingDirectory>${basedir}/resources/jaxws</bindingDirectory>
 	      	  	<keep>true</keep>
-	      	    <packageName>org.huahsin.sync</packageName>
+	      	    <packageName>org.huahsin.async</packageName>
 	      	    <sourceDestDir>${basedir}/src</sourceDestDir>		      	    
 	      	  </configuration>
 	        </execution>
