@@ -11,10 +11,11 @@ import javax.xml.ws.Response;
 import org.huahsin.async.HelloWorldImplService;
 import org.huahsin.async.IHelloWorld;
 import org.huahsin.async.SayHelloWorldResponse;
+import org.huahsin.jaxws.staff.ISeniorManager;
+import org.huahsin.jaxws.staff.SeniorManagerService;
 
 public class Client {
 
-	static private double rate = 0.0;
 	static private String msg = "";
 	
 	public static void main(String[] args) throws InterruptedException, MalformedURLException, ExecutionException {
@@ -24,10 +25,16 @@ public class Client {
 		e.sayHelloWorldMethod();
 		Thread.sleep(1000);
 		System.out.println("after: " + msg);
+		
+		URL url = new URL("http://localhost:8080/WebService2/SeniorManager?wsdl");
+		QName qname = new QName("http://staff.huahsin.org/", "SeniorManagerService");
+		SeniorManagerService service = new SeniorManagerService(url, qname);
+		ISeniorManager manager = service.getSeniorManagerPort();
+		System.out.println(manager.getID());
 	}
 	
 	private void sayHelloWorldMethod() throws MalformedURLException, InterruptedException, ExecutionException {
-		URL url = new URL("http://localhost:8080/ws1?wsdl");
+		URL url = new URL("http://localhost:8080/ws1/HelloWorldImpl?wsdl");
 		QName qname = new QName("http://webmethod.huahsin.org/", "HelloWorldImplService");
 		HelloWorldImplService service = new HelloWorldImplService(url, qname);
 		IHelloWorld hello = service.getHelloWorldImplPort();

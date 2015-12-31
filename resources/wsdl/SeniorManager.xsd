@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. -->
+<xs:schema xmlns:tns="http://staff.huahsin.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://staff.huahsin.org/">
+
+<xs:element name="getID" type="tns:getID"></xs:element>
+
+<xs:element name="getIDResponse" type="tns:getIDResponse"></xs:element>
+
+<xs:complexType name="getID">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getIDResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
